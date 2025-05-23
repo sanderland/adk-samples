@@ -1,0 +1,52 @@
+%%{init: {'theme': 'forest', 'themeVariables': { 'fontSize': '16px'}}}%%
+graph TD
+    subgraph User_Interface["Streamlit Interface"]
+        UI[("🔍 DeHype UI")]
+        Input[/"Input\n- Claims\n- URLs\n- PDFs"/]
+        Report["📊 DeHype Report"]
+    end
+
+    subgraph Main_Agent["Vertex AI Agent"]
+        Controller["🧠 Gemini 2.5 Flash\nModel Controller"]
+        Chat["💬 Chat Session\nFunction Calling"]
+    end
+
+    subgraph Tool_Loop["Iterative Tool Loop"]
+        direction TB
+        Tool_Call["Tool Dispatch"]
+        Tool_Result["Result Collection"]
+        Tool_Continue["Continue Task"]
+
+        Tool_Call --> Tool_Result
+        Tool_Result --> Tool_Continue
+        Tool_Continue -->|"New calls"| Tool_Call
+    end
+
+    subgraph Tools["Available Tools"]
+        Search["🔍 search_web\nGoogle Search + Summary"]
+        PDF["📄 read_pdf\nPDF Extraction"]
+        Web["🌐 read_web_page\nWeb Scraping"]
+        Sum["📝 summarize\nFinal Report"]
+    end
+
+    Input --> Controller
+    Controller --> Chat
+    Chat -->|"Function calls"| Tool_Loop
+    
+    Tool_Call -->|"dispatch"| Tools
+    Tools -->|"results"| Tool_Result
+    
+    Sum -->|"sections:\n- Claim\n- Judgment\n- Summary\n- Sources"| Report
+    
+    UI --> Input
+    Report --> UI
+
+    classDef primary fill:#3498db,stroke:#2980b9,color:white;
+    classDef secondary fill:#2ecc71,stroke:#27ae60,color:white;
+    classDef tool fill:#e74c3c,stroke:#c0392b,color:white;
+    classDef ui fill:#9b59b6,stroke:#8e44ad,color:white;
+
+    class Controller,System primary;
+    class Context,Source,Verify,Summary secondary;
+    class Search,PDF,Web tool;
+    class UI,Input ui;
