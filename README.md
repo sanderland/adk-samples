@@ -7,34 +7,9 @@
 Welcome to the ADK Sample Agents repository! This collection provides ready-to-use agents built on top of the [Agent Development Kit](https://google.github.io/adk-docs/), designed to accelerate your development process. These agents cover a range of common use cases and complexities, from simple conversational bots to complex multi-agent workflows.
 
 ## ✨ Getting Started 
-This repo contains ADK sample agents for both **Python** and **Java.** Navigate to the **[Python](python/)** and **[Java](java/)** subfolders to see language-specific setup instructions, and learn more about the available sample agents. 
+This repo contains ADK sample agents for **Python**. Navigate to the **[Python](python/)** subfolder to see setup instructions, and learn more about the available sample agents. 
 
-To learn more, check out the [ADK Documentation](https://google.github.io/adk-docs/), and the GitHub repositories for [ADK Python](https://github.com/google/adk-python) and [ADK Java](https://github.com/google/adk-java). 
-
-## 🌳 Repository Structure
-```bash
-├── java
-│   ├── agents
-│   │   ├── software-bug-assistant
-│   │   └── time-series-forecasting
-│   └── README.md
-├── python
-│   ├── agents
-│   │   ├── academic-research
-│   │   ├── brand-search-optimization
-│   │   ├── customer-service
-│   │   ├── data-science
-│   │   ├── financial-advisor
-│   │   ├── fomc-research
-│   │   ├── llm-auditor
-│   │   ├── marketing-agency
-│   │   ├── personalized-shopping
-│   │   ├── RAG
-│   │   ├── README.md
-│   │   └── travel-concierge
-│   └── README.md
-└── README.md
-```
+To learn more, check out the [ADK Documentation](https://google.github.io/adk-docs/), and the GitHub repository for [ADK Python](https://github.com/google/adk-python). 
 
 ## ℹ️ Getting help
 
