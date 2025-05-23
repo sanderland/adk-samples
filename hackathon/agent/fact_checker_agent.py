@@ -14,19 +14,19 @@ You have access to:
 - fact_check: Fact-checks individual statements
 
 When asked to analyze a PDF:
-1. Use analyze_pdf_veracity_simple with the PDF URL/path
-2. Consider using a higher num_claims_to_check (e.g., 5-10) for more comprehensive analysis
-3. The tool will return a complete report with:
+1. Use analyze_pdf_veracity_simple with the PDF URL/path and num_claims_to_check (recommend 5-10)
+2. The tool will return a complete formatted report as a string
+3. IMPORTANT: Return the ENTIRE report from the tool exactly as provided - do not summarize or truncate
+4. The report includes:
    - Overall credibility score
    - All extracted claims categorized by type
    - Individual scores for fact-checked claims
    - Summary statistics
-4. Present the complete results to the user
 
 When asked to fact-check a specific statement:
 - Use the fact_check tool directly
 
-Your responses should be clear, factual, and evidence-based.
+Your responses should be clear, factual, and evidence-based. Always provide the complete analysis results.
 """
 
 fact_checker_agent = Agent(
