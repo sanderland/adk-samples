@@ -1,5 +1,5 @@
 [project]
-name = "dehype"
+name = "agent"
 version = "0.1"
 description = "AI-driven agent to counter misinformation"
 authors = [{ name = "Encats" }]
@@ -13,7 +13,9 @@ dependencies = [
     "google-cloud-aiplatform[adk, agent-engines]~=1.93",
     "requests>=2.31.0,<3",
     "beautifulsoup4>=4.12.3,<5",
+    "tavily-python>=0.7.2",
     "pypdf2>=3.0.1",
+    "psutil>=7.0.0",
 ]
 
 

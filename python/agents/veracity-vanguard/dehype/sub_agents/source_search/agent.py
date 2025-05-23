@@ -20,7 +20,7 @@ from google.adk.tools import google_search
 from . import prompt
 
 MODEL = "gemini-2.5-pro-preview-05-06"
-MODEL = "gemini-2.0-flash-001"  
+MODEL = "gemini-2.5-flash-preview-05-20"  
 
 source_search_agent = Agent(
     model=MODEL,
