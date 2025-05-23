@@ -1,5 +1,4 @@
-# Academic Research
-
+# Veracity Vanguard
 
 ## Overview
 
