@@ -18,8 +18,9 @@ from google.adk.agents import LlmAgent
 from google.adk.tools.agent_tool import AgentTool
 
 from . import prompt
-from .sub_agents.academic_newresearch import academic_newresearch_agent
+from .sub_agents.credibility_assessor.agent import credibility_assessor_agent # Import new agent
 from .sub_agents.academic_websearch import academic_websearch_agent
+from .tools.web_fetch_tool import FetchWebsiteTextTool
 
 MODEL = "gemini-2.5-pro-preview-05-06"
 
@@ -38,7 +39,8 @@ academic_coordinator = LlmAgent(
     output_key="seminal_paper",
     tools=[
         AgentTool(agent=academic_websearch_agent),
-        AgentTool(agent=academic_newresearch_agent),
+        AgentTool(agent=credibility_assessor_agent), # Use new agent
+        FetchWebsiteTextTool(),
     ],
 )
 

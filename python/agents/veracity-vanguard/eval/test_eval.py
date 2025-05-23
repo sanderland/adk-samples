@@ -12,20 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Academic_websearch_agent for finding research papers using search tools."""
+"""Basic evalualtion for Academic Research"""
 
-from google.adk import Agent
-from google.adk.tools import google_search
+import pathlib
 
-from . import prompt
+import dotenv
+import pytest
+from google.adk.evaluation.agent_evaluator import AgentEvaluator
 
-MODEL = "gemini-2.5-pro-preview-05-06"
+pytest_plugins = ("pytest_asyncio",)
 
 
-academic_websearch_agent = Agent(
-    model=MODEL,
-    name="academic_websearch_agent",
-    instruction=prompt.ACADEMIC_WEBSEARCH_PROMPT,
-    output_key="recent_citing_papers",
-    tools=[google_search],
-)
+@pytest.fixture(scope="session", autouse=True)
+def load_env():
+    dotenv.load_dotenv()
+
+
+@pytest.mark.asyncio
+async def test_all():
+    """Test the agent's basic ability on a few examples."""
+    await AgentEvaluator.evaluate(
+        "academic_research",
+        str(pathlib.Path(__file__).parent / "data"),
+        num_runs=5,
+    )

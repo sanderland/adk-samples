@@ -26,6 +26,6 @@ academic_websearch_agent = Agent(
     model=MODEL,
     name="academic_websearch_agent",
     instruction=prompt.ACADEMIC_WEBSEARCH_PROMPT,
-    output_key="recent_citing_papers",
+    output_key="potential_original_sources",
     tools=[google_search],
 )

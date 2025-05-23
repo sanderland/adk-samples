@@ -16,6 +16,8 @@ google-cloud-aiplatform = { version = "^1.93", extras = [
     "adk",
     "agent-engines",
 ] }
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.3"
 
 [tool.poetry.group.dev]
 optional = true
