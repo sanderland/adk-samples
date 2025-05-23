@@ -20,11 +20,12 @@ from google.adk.tools import google_search
 from . import prompt
 
 MODEL = "gemini-2.5-pro-preview-05-06"
-
+MODEL = "gemini-2.0-flash-001"  
 
 source_search_agent = Agent(
     model=MODEL,
     name="source_search_agent",
+    description="Take a high level claim and find the most relevant sources to support and/or refute it.",
     instruction=prompt.GENERAL_SOURCE_SEARCH_PROMPT,
     output_key="relevant_sources",
     tools=[google_search],
