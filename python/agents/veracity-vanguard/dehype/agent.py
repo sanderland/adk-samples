@@ -1,12 +1,8 @@
 from google.adk.agents import LlmAgent
-#from google.adk.tools import FunctionTool
-from google.adk.tools.agent_tool import AgentTool
-import requests
-from bs4 import BeautifulSoup
+from google.adk.tools import FunctionTool,google_search
 
 from . import prompt
 from .tools import fetch_and_parse_webpage, extract_pdf_text
-from google.adk.tools import google_search
 
 
 MODEL = "gemini-2.5-pro-preview-05-06"

@@ -1,0 +1,25 @@
+[project]
+name = "dehype"
+version = "0.1"
+description = "AI-driven agent to counter misinformation"
+authors = [{ name = "Encats" }]
+requires-python = ">=3.9,<3.14"
+readme = "README.md"
+dependencies = [
+    "google-genai>=1.9.0,<2",
+    "pydantic>=2.10.6,<3",
+    "python-dotenv>=1.0.1,<2",
+    "google-cloud-aiplatform[adk, agent-engines]~=1.93",
+    "requests>=2.31.0,<3",
+    "beautifulsoup4>=4.12.3,<5",
+    "pypdf2>=3.0.1",
+    "streamlit>=1.45.1",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
