@@ -12,16 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Academic_newresearch_agent for finding new research lines"""
+"""Initializes the credibility_assessor sub-agent."""
 
-from google.adk import Agent
-
-from . import prompt
-
-MODEL = "gemini-2.5-pro-preview-05-06"
-
-academic_newresearch_agent = Agent(
-    model=MODEL,
-    name="academic_newresearch_agent",
-    instruction=prompt.ACADEMIC_NEWRESEARCH_PROMPT,
-)
+from .agent import credibility_assessor_agent

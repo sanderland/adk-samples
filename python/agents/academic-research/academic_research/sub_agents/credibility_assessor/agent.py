@@ -12,20 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Academic_websearch_agent for finding research papers using search tools."""
+"""Credibility_assessor_agent for assessing the credibility of information."""
 
 from google.adk import Agent
-from google.adk.tools import google_search
+from google.adk.tools import google_search # Import google_search
 
-from . import prompt
+from . import prompt # This will refer to the prompt file in the same directory
 
-MODEL = "gemini-2.5-pro-preview-05-06"
+MODEL = "gemini-2.5-pro-preview-05-06" # Or your preferred model
 
-
-academic_websearch_agent = Agent(
+credibility_assessor_agent = Agent(
     model=MODEL,
-    name="academic_websearch_agent",
-    instruction=prompt.ACADEMIC_WEBSEARCH_PROMPT,
-    output_key="potential_original_sources",
-    tools=[google_search],
+    name="credibility_assessor_agent", # New name
+    instruction=prompt.CREDIBILITY_ASSESSOR_PROMPT, # Will be defined in this directory's prompt.py
+    tools=[google_search], # Added google_search tool
+    output_key="credibility_assessment_results" # Added output key
 )
