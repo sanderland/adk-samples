@@ -209,10 +209,10 @@ def run_streamlit():
                             st.info(f"Reading web page: {fn.args['url']}")
                             if fn.args["url"] in visited_urls:
                                 tool_result = "Already visited this URL. Skipping."
-                                print("Already visited this URL. Skipping.")
+                                print(f"{fn.args['url']}: Already visited this URL. Skipping.")
                             else:
                                 tool_result = fetch_and_parse_webpage(fn.args["url"])
-                                print(f"Read web page: {len(tool_result)}")
+                                print(f"Read web page {fn.args['url']}: {len(tool_result)}")
                             st.success(f"Web page result: {len(str(tool_result))//1000:,d} KB")
                         else:
                             st.error(f"Unknown function: {fn.name}")
