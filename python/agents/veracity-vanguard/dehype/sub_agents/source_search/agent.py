@@ -12,6 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Academic_Research: Research advice, related literature finding, research area proposals, web knowledge access."""
+"""Academic_websearch_agent for finding research papers using search tools."""
 
-from . import agent
+from google.adk import Agent
+from google.adk.tools import google_search
+
+from . import prompt
+
+MODEL = "gemini-2.5-pro-preview-05-06"
+
+
+source_search_agent = Agent(
+    model=MODEL,
+    name="source_search_agent",
+    instruction=prompt.GENERAL_SOURCE_SEARCH_PROMPT,
+    output_key="relevant_sources",
+    tools=[google_search],
+)
