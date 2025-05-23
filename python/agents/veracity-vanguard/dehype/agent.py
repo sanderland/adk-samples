@@ -2,7 +2,6 @@ from google.adk.agents import LlmAgent
 from google.adk.tools.agent_tool import AgentTool
 
 from . import prompt
-from .sub_agents.credibility_assessor.agent import credibility_assessor_agent # Import new agent
 from .sub_agents.source_search import source_search_agent 
 
 MODEL = "gemini-2.5-pro-preview-05-06"
